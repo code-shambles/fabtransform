@@ -1,0 +1,72 @@
+
+#fabtransform--button,
+#fabtransform--pane {
+  position: fixed;
+  right: 2.8rem;
+  bottom: 2.8rem;
+  width: 5.6rem;
+  height: 5.6rem;
+  color: #fff;
+  border-radius: 50%;
+}
+#fabtransform--button {
+  z-index: 1005;
+  opacity: 1;
+  padding: 0;
+  font-size: 3.2rem;
+  line-height: 5.6rem;
+  text-align: center;
+  background: #e25244;
+  border: 0 none;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.25), 0 1px 9px rgba(0,0,0,0.25);
+  cursor: pointer;
+  transition: opacity 0.4s, box-shadow 0.2s, margin-bottom 0.2s, background 0.2s;
+}
+#fabtransform--button:focus {
+  margin-bottom: -1px;
+  outline: none;
+  background: #ce4639;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.45);
+}
+#fabtransform--button.fabtransform--opening,
+#fabtransform--button.fabtransform--open {
+  opacity: 0;
+}
+#fabtransform--button.fabtransform--open {
+  z-index: 1003;
+}
+#fabtransform--pane {
+  z-index: 1004;
+  opacity: 0;
+  box-sizing: border-box;
+  padding: 0;
+  background: rgba(0,0,0,0.85);
+  overflow: hidden;
+  transform: rotate(-60deg);
+  transition: opacity 0.4s, right 0.4s, bottom 0.4s, width 0.4s, height 0.4s, transform 0.4s;
+}
+#fabtransform--pane.fabtransform--opening {
+  display: block;
+}
+#fabtransform--pane.fabtransform--opening,
+#fabtransform--pane.fabtransform--open {
+  padding: 60px;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  border-radius: 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.25), 0 1px 9px rgba(0,0,0,0.25);
+  transform: rotate(0deg);
+}
+#fabtransform--pane.fabtransform--open {
+  overflow: visible;
+}
+#fabtransform--pane .fabtransform--pane-inner {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+#fabtransform--pane.fabtransform--open .fabtransform--pane-inner {
+  opacity: 1;
+}
